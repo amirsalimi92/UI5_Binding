@@ -17,6 +17,11 @@ sap.ui.require(
       //   greetingText: "Hi my name is Amir from json",
       // });
 
+      // Define Product.json as a model
+      const oProductModel = new JSONModel();
+      oProductModel.loadData("./model/Product.json");
+      sap.ui.getCore().setModel(oProductModel, "products");
+
       // Define the i18n files as model
       const oResourceModel = new ResourceModel({
         bundleName: "myapp.i18n.i18n",
@@ -25,6 +30,7 @@ sap.ui.require(
       });
       sap.ui.getCore().setModel(oResourceModel, "i18n");
 
+      // Define the json data as by default model
       const oModel = new JSONModel();
       oModel.loadData("./model/test.json");
 
