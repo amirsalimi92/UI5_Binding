@@ -46,9 +46,20 @@ sap.ui.require(
       // }).placeAt("content");
 
       // Display the XML view which called App.view.xml
-      new XMLView({
+      // new XMLView({
+      //   viewName: "myapp.view.App",
+      // }).placeAt("content");
+
+      // Display the XML view called "App"
+      let oView = new XMLView({
         viewName: "myapp.view.App",
-      }).placeAt("content");
+      });
+
+      // Register the view with the messanger manager
+      sap.ui.getCore().getMessageManager().registerObject(oView, true);
+
+      // Display the view on indexedDB.html
+      oView.placeAt("content");
     });
   }
 );
