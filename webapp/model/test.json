@@ -3,5 +3,11 @@
   "firstName": "Amir",
   "lastName": "Salimi",
   "enabled": true,
+  "address": {
+    "street": "Ahrensburgerstr. 127",
+    "zip": "22045",
+    "city": "Hamburg",
+    "country": "Germany"
+  },
   "panelHeaderText": "Data binding basics"
 }
