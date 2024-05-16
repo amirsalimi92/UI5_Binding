@@ -9,5 +9,7 @@
     "city": "Hamburg",
     "country": "Germany"
   },
+  "salesAmount": 12345.6789,
+  "currencyCode": "EUR",
   "panelHeaderText": "Data binding basics"
 }
