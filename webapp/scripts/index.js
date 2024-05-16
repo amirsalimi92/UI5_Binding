@@ -1,6 +1,10 @@
 sap.ui.require(
-  ["sap/ui/model/json/JSONModel", "sap/ui/core/mvc/XMLView"],
-  function (JSONModel, XMLView) {
+  [
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/BindingMode",
+    "sap/ui/core/mvc/XMLView",
+  ],
+  function (JSONModel, BindingMode, XMLView) {
     "use strict";
 
     // Attach an anonymous function to the SAPUI5 'init' event
@@ -14,6 +18,10 @@ sap.ui.require(
 
       const oModel = new JSONModel();
       oModel.loadData("./model/test.json");
+
+      // One way data binding
+      oModel.setDefaultBindingMode(BindingMode.OneWay);
+
       sap.ui.getCore().setModel(oModel);
 
       // this.getView().setModel(oMOdel)  -> another way to define the model
