@@ -2,9 +2,10 @@ sap.ui.require(
   [
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/BindingMode",
+    "sap/ui/model/resource/ResourceModel",
     "sap/ui/core/mvc/XMLView",
   ],
-  function (JSONModel, BindingMode, XMLView) {
+  function (JSONModel, BindingMode, ResourceModel, XMLView) {
     "use strict";
 
     // Attach an anonymous function to the SAPUI5 'init' event
@@ -15,6 +16,14 @@ sap.ui.require(
       // const oModel = new JSONModel({
       //   greetingText: "Hi my name is Amir from json",
       // });
+
+      // Define the i18n files as model
+      const oResourceModel = new ResourceModel({
+        bundleName: "myapp.i18n.i18n",
+        supportedLocals: ["", "de"],
+        fallbackLocale: "",
+      });
+      sap.ui.getCore().setModel(oResourceModel, "i18n");
 
       const oModel = new JSONModel();
       oModel.loadData("./model/test.json");
