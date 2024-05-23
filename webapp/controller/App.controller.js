@@ -35,6 +35,15 @@ sap.ui.define(
           "string"
         );
       },
+
+      onItemSelected: function (oEvent) {
+        const oSelecteditem = oEvent.getSource();
+        const oContext = oSelecteditem.getBindingContext("products");
+        const sPath = oContext.getPath();
+        // Set Id from View in Panel
+        const oProductDetailPanel = this.byId("productDetailsPanel");
+        oProductDetailPanel.bindElement({ path: sPath, model: "products" });
+      },
     });
   }
 );

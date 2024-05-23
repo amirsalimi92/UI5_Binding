@@ -68,6 +68,8 @@
         <List headerText="{i18n>productListTitle}"
             items="{products>/Products}">
             <ObjectListItem title="{products>ProductName}"
+                press=".onItemSelected"
+                type="Active"
                 number="{
                     parts: [
                         {path: 'products>UnitPrice'},
@@ -90,8 +92,34 @@
                         }"/>
                 </attributes>
             </ObjectListItem>
-
         </List>
+    </Panel>
+    <Panel id="productDetailsPanel"
+            headerText="{i18n>panel4Headertext}"
+            class="sapUiResponsiveMargin"
+            width="auto">
+        <form:SimpleForm editable="true"
+                        layout="ColumnLayout">
+
+            <Label text="{i18n>productID}" />
+            <Input value="{products>ProductID}" />
+            
+            <Label text="{i18n>productName}" />
+            <Input value="{products>ProductName}" />
+        
+            <Label text="{i18n>QuantityPerUnit}" />
+            <Input value="{products>QuantityPerUnit}" />
+
+            <Label text="{i18n>UnitPrice}" />
+            <Input value="{products>UnitPrice}" />
+
+            <Label text="{i18n>UnitsInStock}" />
+            <Input value="{products>UnitsInStock}" />
+                
+            <Label text="{i18n>Discontinued}" />
+            <Input value="{products>Discontinued}" />
+                            
+        </form:SimpleForm>
 
     </Panel>
 </mvc:View>
