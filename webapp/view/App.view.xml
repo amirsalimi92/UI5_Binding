@@ -78,7 +78,8 @@
                     type: 'sap.ui.model.type.Currency',
                     formatOptions: {showMeasure: false}
                 }"
-                numberUnit="{/currencyCode}">
+                numberUnit="{/currencyCode}"
+                numberState="{= ${products>UnitPrice} > ${/priceThreshold} ? 'Error' : 'Success'}">
                 <attributes>
                     <ObjectAttribute text="{products>QuantityPerUnit}"/>
                     <ObjectAttribute title="{i18n>stockValue}"
@@ -117,7 +118,7 @@
             <Input value="{products>UnitsInStock}" />
                 
             <Label text="{i18n>Discontinued}" />
-            <Input value="{products>Discontinued}" />
+            <CheckBox selected="{products>Discontinued}" />
                             
         </form:SimpleForm>
 

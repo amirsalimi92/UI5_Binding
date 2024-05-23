@@ -39,9 +39,12 @@ sap.ui.define(
       onItemSelected: function (oEvent) {
         const oSelecteditem = oEvent.getSource();
         const oContext = oSelecteditem.getBindingContext("products");
+
         const sPath = oContext.getPath();
+        console.log(sPath);
         // Set Id from View in Panel
         const oProductDetailPanel = this.byId("productDetailsPanel");
+        console.log(oProductDetailPanel);
         oProductDetailPanel.bindElement({ path: sPath, model: "products" });
       },
     });
